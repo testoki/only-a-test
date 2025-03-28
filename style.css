@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-#app {
+#game {
     text-align: center;
     background-color: white;
     padding: 20px;
@@ -22,15 +22,13 @@ h1 {
     color: #333;
 }
 
-#chart-container {
+#cookieContainer {
     margin-top: 20px;
-    width: 100%;
-    height: 400px;
 }
 
 button {
-    margin-top: 20px;
     padding: 10px 20px;
+    margin-top: 10px;
     background-color: #007BFF;
     color: white;
     border: none;
@@ -40,4 +38,9 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+#cookieCount, #cookiesPerClick {
+    font-size: 18px;
+    margin-top: 10px;
 }

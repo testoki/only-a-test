@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbeitsstatistiken</title>
+    <title>Cookie Clicker</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js Bibliothek -->
 </head>
 <body>
-    <div id="app">
-        <h1>Arbeitsstatistiken dieser Woche</h1>
-        <div id="chart-container">
-            <!-- Diagramm wird hier angezeigt -->
+    <div id="game">
+        <h1>Cookie Clicker</h1>
+        <div id="cookieContainer">
+            <button id="cookieButton">Klick mich!</button>
         </div>
-        <button id="refreshButton">Daten aktualisieren</button>
+        <p id="cookieCount">Cookies: 0</p>
+        <p id="cookiesPerClick">Cookies pro Klick: 1</p>
+        <button id="upgradeButton">Upgrade (Kosten: 10 Cookies)</button>
     </div>
     <script src="script.js"></script>
 </body>

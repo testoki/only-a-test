@@ -1,13 +1,37 @@
-// Importiere die Funktionen, die wir brauchen
-import { getWorkData, updateWorkData } from './data.js';
-import { renderChart } from './chart.js';
+// Initiale Anzahl an Cookies
+let cookieCount = 0;
+let cookiesPerClick = 1;
+let upgradeCost = 10;
 
-// Funktion zum Aktualisieren des Diagramms mit den richtigen Daten
-document.getElementById('refreshButton').addEventListener('click', function() {
-    const data = getWorkData('thisWeek'); // Holt die Arbeitsstunden dieser Woche
-    renderChart(data); // Aktualisiere das Diagramm mit den neuen Daten
+// Referenzen zu den HTML-Elementen
+const cookieButton = document.getElementById('cookieButton');
+const cookieCountElement = document.getElementById('cookieCount');
+const cookiesPerClickElement = document.getElementById('cookiesPerClick');
+const upgradeButton = document.getElementById('upgradeButton');
+
+// Funktion, die ausgeführt wird, wenn der Benutzer auf den Cookie klickt
+cookieButton.addEventListener('click', function() {
+    cookieCount += cookiesPerClick; // Cookies hinzufügen
+    updateDisplay(); // Anzeige aktualisieren
 });
 
-// Initiales Diagramm rendern
-const initialData = getWorkData('thisWeek'); // Holt die Arbeitsstunden der aktuellen Woche
-renderChart(initialData); // Zeigt das Diagramm an
+// Funktion, um die Anzeige zu aktualisieren
+function updateDisplay() {
+    cookieCountElement.textContent = `Cookies: ${cookieCount}`;
+    cookiesPerClickElement.textContent = `Cookies pro Klick: ${cookiesPerClick}`;
+}
+
+// Funktion, um das Upgrade zu kaufen
+upgradeButton.addEventListener('click', function() {
+    if (cookieCount >= upgradeCost) {
+        cookieCount -= upgradeCost; // Cookies für das Upgrade abziehen
+        cookiesPerClick += 1; // Erhöht die Anzahl an Cookies pro Klick
+        upgradeCost *= 2; // Der Preis für das nächste Upgrade verdoppelt sich
+        updateDisplay(); // Anzeige aktualisieren
+    } else {
+        alert('Nicht genügend Cookies für das Upgrade!');
+    }
+});
+
+// Initiale Anzeige
+updateDisplay();
