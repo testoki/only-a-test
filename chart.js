@@ -18,7 +18,7 @@ function renderChart(data) {
             labels: ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'], // Wochentage
             datasets: [{
                 label: 'Arbeitsstunden',
-                data: data,
+                data: data, // Die Stunden werden hier übergeben
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
                 borderWidth: 1

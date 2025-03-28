@@ -1,5 +1,3 @@
-// Datei, um die Arbeitsdaten dynamisch zu verwalten und zu speichern
-
 // Beispielhafte Daten für diese Woche und letzte Woche
 const workData = {
     thisWeek: [8, 7, 6, 8, 7, 7, 6], // Stunden von Montag bis Sonntag dieser Woche
